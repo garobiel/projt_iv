@@ -2,6 +2,9 @@
 Instalar todas as dependencias indicada pelo 'pacckage.json' 
 ### npm install 
 
+**Rodar o projeto**
+### nodemon app.js
+
 **Sequência Para Criar o Projeto**
 Criar o arquivo package
 ### 'npm init'
@@ -10,7 +13,7 @@ Criar o arquivo package
 ### 'npm install express'
 
 **Rodar o projeto**
-### node app.js
+### nodemon app.js
 
 **Acessar o projeto no navegadro**
 ### http://localhost:8080
