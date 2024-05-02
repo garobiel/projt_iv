@@ -22,3 +22,8 @@ Criar o arquivo package
 ### npm install -g nodemon
 ### npm install --save-dev nodemon
 
+**Sequilize é uma bibliotexa Javascript que facilita o gerenciamento de um banco de dados SQL**
+### npm install --save sequelize
+
+**Você tera que instalar manualmente o drive do seu banco de dados**
+### npm install --save mysql2 
