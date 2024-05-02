@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get("/", async(req, res) => {
-    res.send("Página inicial CNPAT ");
+    res.send("Página inicial CONPAT ");
 
 });
 
