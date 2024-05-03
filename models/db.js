@@ -9,9 +9,9 @@ const sequelize = new Sequelize( "conpat", "root","Amoskate123*", {
 
 sequelize.authenticate()
 .then(function(){
-    console.log("Conxexão com o banco de dados estabelecida com sucesso!");
+    console.log("Conxexão ativa!");
 }).catch(function(){
-    console.log("Erro: Conexão com o banco de dados não realizada com sucesso!");
+    console.log("Erro: Favor chamar adm!");
 });
 
 module.exports = sequelize; 
