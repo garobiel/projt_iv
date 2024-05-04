@@ -9,9 +9,9 @@ const sequelize = new Sequelize( "conpat", "root","Amoskate123*", {
 
 sequelize.authenticate()
 .then(function(){
-    console.log("Conxexão ativa!");
+    console.log("Conexão ativa!");
 }).catch(function(){
-    console.log("Erro: Favor chamar adm!");
+    console.log("Falha ao se conectar: ")
 });
 
 module.exports = sequelize; 
