@@ -11,7 +11,7 @@ sequelize.authenticate()
 .then(function(){
     console.log("Conexão ativa!");
 }).catch(function(){
-    console.log("Falha ao se conectar: ")
+    console.log("Falha ao se conectar")
 });
 
 module.exports = sequelize; 
