@@ -16,13 +16,12 @@ select * from iventario;
 describe iventario;
 
 insert into iventario(Patrimonio, Produto, Marca, Serie, Modelo, Colaborador, Entrada, Saida) values(
-"000546", "Gabinete", "HP", "BRG023576", "OKMY3G", "Gabriel Rocha", "Entrada", "-"
+"000750", "Gabinete", "HP", "BRJ534WS4G", "HP Prodesk 600 G1 SFF", "Lucas Lopes", " - ", " Saída "
 
 );
 
 select * from iventario;
 
-select Modelo from iventario;
 
 
 
