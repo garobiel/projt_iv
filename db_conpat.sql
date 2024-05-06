@@ -23,6 +23,10 @@ insert into iventario(Patrimonio, Produto, Marca, Serie, Modelo, Colaborador, En
 select * from iventario;
 
 
+<<<<<<< Updated upstream
+=======
+upa
+>>>>>>> Stashed changes
 
 
 
