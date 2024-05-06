@@ -7,13 +7,38 @@ const sequelize = new Sequelize( "conpat2", "root","Amoskate123*", {
     dialect: 'mysql'
 });
 
+
+const Usuario =  sequelize.define('inventario',  {
+    Colaborador: {
+        type: Sequelize.TEXT
+ },
+   Patrimonio: {
+        type:Sequelize.STRING(6)
+   },
+    Produto: {
+        type:Sequelize.TEXT
+    },
+    Serie: {
+        type:Sequelize.TEXT
+    }, 
+    Modelo: {   
+        type:Sequelize.TEXT
+    },
+    Entrada: {
+        type:Sequelize.TEXT
+    },
+    Saida: {
+        type:Sequelize.TEXT
+    }
+
+})
 sequelize.authenticate()
-.then(function(){
-    console.log("Conexão ativa!");
-}).catch(function(){
-    console.log("Falha ao se conectar")
-});
+    .then(function () {
+        console.log("Conectado com sucesso!");
+    }).catch(function (erro) {
+        console.log("Falha ao se conectar : " + erro)
+    });
+
+
 
 module.exports = sequelize; 
-
-
