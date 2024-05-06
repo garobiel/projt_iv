@@ -4,7 +4,7 @@ const app = express();
 const db = require('./models/db');
 
 app.get("/", async(req, res) => {
-    res.send("Página inicial - CONPAT ");
+    res.send("Página inicial - CONPAT2 ");
 
 });
 
