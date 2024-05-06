@@ -1,27 +1,29 @@
-// Aqui estamos pegando dentro do modulo a classe sequelize e tambem estamos importando a biblioteca sequelize
+// Importando a classe Sequelize do módulo 'sequelize'
 const  Sequelize  = require('sequelize');
 
-//Aqui vamos criar instancias(instancia e um objeto especifico criado aparti de uma classe ou de um contrutor)
+// Criando uma instância do Sequelize para se conectar ao banco de dados MySQL
 const sequelize = new Sequelize( "conpat2", "root","Amoskate123*", {
     host: 'localhost',
     dialect: 'mysql'
 });
 
+// Definindo o modelo de dados para a tabela "Inventarios"
 const Usuario =  sequelize.define('Inventarios',  {
+    // Definindo os campos da tabela com seus tipos de dados
     Colaborador: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT // Campo "Colaborador" do tipo texto
  },
    Patrimonio: {
-        type:Sequelize.STRING(6)
+       type: Sequelize.STRING(6) // Campo "Patrimonio" do tipo string com no máximo 6 caracteres
    },
     Produto: {
-        type:Sequelize.TEXT
+        type: Sequelize.TEXT // Campo "Produto" do tipo texto
     },
     Serie: {
-        type:Sequelize.TEXT
+        type: Sequelize.TEXT // Campo "Serie" do tipo texto
     }, 
     Modelo: {   
-        type:Sequelize.TEXT
+        type: Sequelize.TEXT // Campo "Modelo" do tipo texto
     },
     Entrada: {
         type:Sequelize.TEXT
