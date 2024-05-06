@@ -7,8 +7,7 @@ const sequelize = new Sequelize( "conpat2", "root","Amoskate123*", {
     dialect: 'mysql'
 });
 
-
-const Usuario =  sequelize.define('inventario',  {
+const Usuario =  sequelize.define('Inventarios',  {
     Colaborador: {
         type: Sequelize.TEXT
  },
@@ -31,7 +30,9 @@ const Usuario =  sequelize.define('inventario',  {
         type:Sequelize.TEXT
     }
 
-})
+});
+
+// Usuario.sync({force: true});
 sequelize.authenticate()
     .then(function () {
         console.log("Conectado com sucesso!");
