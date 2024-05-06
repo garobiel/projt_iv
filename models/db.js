@@ -34,6 +34,18 @@ const Usuario =  sequelize.define('Inventarios',  {
 
 });
 
+Usuario.create({
+
+    Colaborador : "Gabriel Rocha",
+    Patrimonio: "000570",
+    Produto : "Gabinete", 
+    Serie : "BRG12JP87"
+    Modelo : "Hp"
+
+
+
+})
+
 // Usuario.sync({force: true});
 sequelize.authenticate()
     .then(function () {
