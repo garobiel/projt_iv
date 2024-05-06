@@ -22,6 +22,7 @@ insert into iventario(Patrimonio, Produto, Marca, Serie, Modelo, Colaborador, En
 
 select * from iventario;
 
+select Modelo from iventario;
 
 
 
