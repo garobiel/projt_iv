@@ -40,18 +40,18 @@ const Usuario =  sequelize.define('Inventarios',  {
 
 Usuario.create({
 
-    Colaborador : "Gabriel Rocha",
+    Colaborador: "Gabriel Rocha",
     Patrimonio: "000570",
-    Produto : "Gabinete", 
-    Marca : "Dell",
-    Serie : "BRG12JP87",
-    Modelo : "Workstantion T3610",
-    Entrada : "Entrada",
-    Saida : "Saida"
+    Produto: "Gabinete",
+    Marca: "Dell",
+    Serie: "BRG12JP87",
+    Modelo: "Workstantion T3610",
+    Entrada: "Entrada",
+    Saida: "-"
 
 })
 
-// Usuario.sync({force: true});
+//Usuario.sync({force: true});
 sequelize.authenticate()
     .then(function () {
         console.log("Conectado com sucesso!");
