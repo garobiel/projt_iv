@@ -69,4 +69,4 @@ sequelize.authenticate() // Tenta autenticar a conexão com o banco de dados
         console.log("Falha ao se conectar: " + erro) // Mensagem de falha ao conectar ao banco de dados
     });
 
-module.exports = sequelize; // Exporta a instância do Sequelize para uso em outros módulos
+module.exports = sequelize; // Exporta a instância do Sequelize para uso em outros módulo
