@@ -19,6 +19,10 @@ const Usuario =  sequelize.define('Inventarios',  {
     Produto: {
         type: Sequelize.TEXT // Campo "Produto" do tipo texto
     },
+    Marca : {
+        type: Sequelize.TEXT
+
+    },
     Serie: {
         type: Sequelize.TEXT // Campo "Serie" do tipo texto
     }, 
@@ -39,10 +43,11 @@ Usuario.create({
     Colaborador : "Gabriel Rocha",
     Patrimonio: "000570",
     Produto : "Gabinete", 
-    Serie : "BRG12JP87"
-    Modelo : "Hp"
-
-
+    Marca : "Dell",
+    Serie : "BRG12JP87",
+    Modelo : "Workstantion T3610",
+    Entrada : "Entrada",
+    Saida : "Saida"
 
 })
 
