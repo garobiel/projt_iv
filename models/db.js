@@ -70,3 +70,4 @@ sequelize.authenticate() // Tenta autenticar a conexão com o banco de dados
     });
 
 module.exports = sequelize; // Exporta a instância do Sequelize para uso em outros módulo
+
