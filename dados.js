@@ -1,10 +1,7 @@
-const connection = require('./main'); // Importa a configuração do banco de dados
-const mysql = require('mysql2/promise');
+const pool = require('./main');
 
-// Estabelece uma conexão com o banco de dados usando a configuração importada
-mysql.createConnection(connection)
+pool.getConnection()
     .then(async conn => {
-        // Realiza a consulta para criar a tabela
         await conn.query(`
             CREATE TABLE IF NOT EXISTS Controle_iv (
                 id INT AUTO_INCREMENT PRIMARY KEY,
@@ -18,10 +15,31 @@ mysql.createConnection(connection)
                 Saida TEXT
             )
         `);
-        console.log('Tabela criada com sucesso!');
-        // Não se esqueça de fechar a conexão quando terminar de usar
-        conn.end();
+         const select = await conn.query (`
+        SELECT * FROM controle_iv
+        `) 
+        console.log(select)
+
+
+        /*
+        await conn.query(`
+        INSERT INTO controle_iv (
+                Colaborador, 
+                Patrimonio,
+                Produto,
+                Marca,
+                Serie,
+                Modelo,
+                Entrada,
+                Saida
+            ) VALUES("Allan", "001001", "CPU", "DELL", "BRG12345", "T3610", "E", "-")
+           
+        `);
+        */
+        console.log('Dados inseridos com sucesso!');
+        conn.release(); // Liberar a conexão de volta para o pool
     })
     .catch(error => {
         console.error('Erro ao conectar ao banco de dados:', error);
     });
+ 
