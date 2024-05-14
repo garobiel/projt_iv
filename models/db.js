@@ -2,7 +2,7 @@
 const  Sequelize  = require('sequelize');
 
 //Aqui vamos criar instancias(instancia e um objeto especifico criado aparti de uma classe ou de um contrutor)
-const sequelize = new Sequelize( "conpat", "root","Amoskate123*", {
+const sequelize = new Sequelize( "teste", "root","Amoskate123*", {
     host: 'localhost',
     dialect: 'mysql'
 });
@@ -15,5 +15,6 @@ sequelize.authenticate()
 });
 
 module.exports = sequelize; 
+
 
 
