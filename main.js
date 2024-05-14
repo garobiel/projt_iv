@@ -7,7 +7,7 @@ const pool = mysql.createPool({
     host: 'localhost',      // Endereço do servidor do banco de dados (neste caso, localhost)
     user: 'root',           // Nome de usuário para acessar o banco de dados
     password: 'Amoskate123*', // Senha para acessar o banco de dados
-    database: 'teste'       // Nome do banco de dados a ser usado
+    database: 'main_2'       // Nome do banco de dados a ser usado
 });
 
 // Exporta o pool de conexões para que ele possa ser usado em outros arquivos JavaScript no projeto.
