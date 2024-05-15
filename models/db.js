@@ -97,3 +97,4 @@ async function main() {
 
 // Chama a função principal
 main().catch(err => console.error(err));
+
