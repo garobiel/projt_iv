@@ -15,13 +15,17 @@ pool.getConnection()
                 Saida TEXT
             )
         `);
-         const select = await conn.query (`
+    module.exports = {
+        async show() {
+            const select = await conn.query(`
         SELECT * FROM controle_iv
-        `) 
-        console.log(select)
+        `)
+            console.log(select)
+        }
+    }
 
-
-        /*
+/*
+        
         await conn.query(`
         INSERT INTO controle_iv (
                 Colaborador, 
@@ -43,3 +47,4 @@ pool.getConnection()
         console.error('Erro ao conectar ao banco de dados:', error);
     });
  
+

@@ -1,10 +1,12 @@
 const express = require('express');
 const app = express();
-
+const conectdados = require('./dados')
 const db = require('./models/db');
 
+app.set('view engine', 'ejs')
+
 app.get("/", async(req, res) => {
-    res.send("Página inicial - CONPAT ");
+    
 
 });
 
