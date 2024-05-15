@@ -1,8 +1,8 @@
 const mysql = require('mysql2/promise');
 const prompt = require('prompt');
+const { exec } = require('child_process');
 
 async function main() {
-    // Configurações de conexão com o banco de dados
     const connection = await mysql.createConnection({
         host: 'localhost',
         user: 'root',
@@ -10,13 +10,11 @@ async function main() {
         database: 'conpat'
     });
 
-    // Função para verificar se a tabela existe
     async function verificaTabelaExiste() {
         const [rows] = await connection.execute("SHOW TABLES LIKE 'Inventarios'");
         return rows.length > 0;
     }
 
-    // Função para criar a tabela se ela não existir
     async function criarTabela() {
         const sql = `
             CREATE TABLE IF NOT EXISTS Inventarios (
@@ -33,8 +31,7 @@ async function main() {
         `;
         await connection.execute(sql);
     }
-    
-    // Função para solicitar entrada do usuário para cada campo da tabela
+
     async function solicitarEntrada(campos, valoresCampos, indice = 0) {
         if (indice >= campos.length) {
             await inserirNoBanco(valoresCampos);
@@ -56,17 +53,23 @@ async function main() {
         await solicitarEntrada(campos, valoresCampos, indice + 1);
     }
 
-    // Função para inserir os valores no banco de dados
     async function inserirNoBanco(valoresCampos) {
         const campos = Object.keys(valoresCampos);
         const sql = `INSERT INTO Inventarios (${campos.join(', ')}) VALUES (${campos.map(() => '?').join(', ')})`;
         const valores = Object.values(valoresCampos);
         await connection.execute(sql, valores);
         console.log('Entrada criada com sucesso.');
-        connection.end();
+        const resposta = await promptInput('Deseja preencher uma nova entrada? (Sim/Não)');
+        if (resposta.trim().toLowerCase() === 'sim') {
+            console.clear(); // Limpa o console
+            await solicitarEntrada(campos, {}); // Reinicia o processo de preenchimento
+        } else {
+            connection.end(); // Encerra a conexão com o banco de dados
+            console.log('Encerrando o programa...');
+            process.exit(); // Encerra o processo Node.js
+        }
     }
 
-    // Função auxiliar para solicitar entrada do usuário para um campo específico
     function promptInput(campo) {
         return new Promise((resolve, reject) => {
             prompt.get(campo, (err, result) => {
@@ -79,21 +82,20 @@ async function main() {
         });
     }
 
-    // Verifica se a tabela existe e a cria se necessário
     try {
         const tabelaExiste = await verificaTabelaExiste();
         if (!tabelaExiste) {
             await criarTabela();
+            console.log('Tabela "Inventarios" verificada e criada com sucesso!');
+        } else {
+            console.log('Tabela já existente.');
         }
-        console.log('Tabela "Inventarios" verificada e criada com sucesso ou já existente.');
         const campos = ['Colaborador', 'Patrimonio', 'Produto', 'Marca', 'Serie', 'Modelo', 'Entrada', 'Saida'];
-        const valoresCampos = {};
-        await solicitarEntrada(campos, valoresCampos);
+        await solicitarEntrada(campos, {});
     } catch (error) {
         console.error('Erro:', error);
         connection.end();
     }
 }
 
-// Chama a função principal
 main().catch(err => console.error(err));
