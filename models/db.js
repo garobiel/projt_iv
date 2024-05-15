@@ -32,7 +32,7 @@ async function main() {
             )
         `;
         await connection.execute(sql);
-    }
+    } 
     
     // Função para solicitar entrada do usuário para cada campo da tabela
     async function solicitarEntrada(campos, valoresCampos, indice = 0) {
