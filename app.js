@@ -11,10 +11,11 @@ app.get("/", async(req, res) => {
 app.get("/cadastrar", async(req, res) =>{
     res.send("Pagina cadastrar")
 
-});
+}); 
+
 
 
 app.listen(8080, () => {
     console.log("Servidor iniciado na porta 8080: http://localhost:8080")
 
-});
+}); 
