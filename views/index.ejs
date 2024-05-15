@@ -12,7 +12,55 @@
 <body>
     <h1>CONPAQ</h1>
     <div>
-        <%= dados.Colaborador %>
+        <h2>Dados da Tabela Inventarios:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Colaborador</th>
+                    <th>Patrimonio</th>
+                    <th>Produto</th>
+                    <th>Marca</th>
+                    <th>Serie</th>
+                    <th>Modelo</th>
+                    <th>Entrada</th>
+                    <th>Saida</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% dadosInventarios.forEach(dado=> { %>
+                    <tr>
+                        <td>
+                            <%= dado.id %>
+                        </td>
+                        <td>
+                            <%= dado.Colaborador %>
+                        </td>
+                        <td>
+                            <%= dado.Patrimonio %>
+                        </td>
+                        <td>
+                            <%= dado.Produto %>
+                        </td>
+                        <td>
+                            <%= dado.Marca %>
+                        </td>
+                        <td>
+                            <%= dado.Serie %>
+                        </td>
+                        <td>
+                            <%= dado.Modelo %>
+                        </td>
+                        <td>
+                            <%= dado.Entrada %>
+                        </td>
+                        <td>
+                            <%= dado.Saida %>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
     </div>
 </body>
 

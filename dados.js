@@ -24,6 +24,23 @@ pool.getConnection()
             }
         }
 
+        // dados.js
+
+        const pool = require('./models/db');
+
+        async function getAllData() {
+            try {
+                const [rows] = await pool.query('SELECT * FROM Inventarios');
+                return rows;
+            } catch (error) {
+                throw error;
+            }
+        }
+
+        module.exports = {
+            getAllData
+        };
+
         /*
                 
                 await conn.query(`

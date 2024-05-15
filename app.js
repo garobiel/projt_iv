@@ -12,7 +12,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.get('/', async (req, res) => {
     try {
         // Consulta ao banco de dados para obter os dados
-        const dados = await pool.show(); // Suponha que obterDados() seja uma função que retorna os dados do banco de dados
+        const dados = await pool.showAll(); // Corrigido de pool.show para pool.showAll
 
         // Renderiza a visualização com os dados
         res.render('index', { dados });
