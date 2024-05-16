@@ -7,7 +7,7 @@ const sequelize = new Sequelize( "main_2", "root","Amoskate123*", {
     dialect: 'mysql'
 });
 
-sequelize.authenticate()
+sequelize.authenticate() s
 .then(function(){
     console.log("Conxexão com o banco de dados estabelecida com sucesso!");
 }).catch(function(){
