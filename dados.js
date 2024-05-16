@@ -20,7 +20,7 @@ pool.getConnection()
                 const select = await conn.query(`
         SELECT * FROM controle_iv
         `)
-                console.log(select)
+                console.log(select) 
             }
         }
 
