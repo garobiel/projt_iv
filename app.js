@@ -95,11 +95,3 @@ async function main() {
     } catch (error) {
         console.error('Erro:', error);
         connection.end();
-    }
-}
-
-<<<<<<< HEAD
-}); 
-=======
-main().catch(err => console.error(err));
->>>>>>> d0ab0eba2d8cf09d028a1ad31ebd4ce8f8afc605
