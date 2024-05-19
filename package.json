@@ -1,7 +1,7 @@
 {
   "name": "projt_iv",
   "version": "1.0.0",
-  "description": "",
+  "description": "**Como Rodar o Projeto Baixado**\r Instalar todas as dependencias indicada pelo 'pacckage.json' \r ### npm install",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
