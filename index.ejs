@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibição dos dados</title>
+</head>
+<body>
+   <h1>Dados da Tabela</h1>
+    <ul>
+        <% dados.forEach(dado => { %>
+            <li><%= dado.Colaborador %> - <%= dado.Patrimonio %> - <%= dado.Produto %> - <%= dado.Marca %> - <%= dado.Serie %> - <%= dado.Modelo %></li>
+
+    <% }); %>
+
+    </ul>
+</body>
+</html>

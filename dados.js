@@ -10,9 +10,7 @@ pool.getConnection()
                 Produto TEXT,
                 Marca TEXT,
                 Serie TEXT,
-                Modelo TEXT,
-                Entrada TEXT,
-                Saida TEXT
+                Modelo TEXT
             )
         `);
         module.exports = {
