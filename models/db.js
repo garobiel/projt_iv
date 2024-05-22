@@ -1,6 +1,6 @@
+
 const mysql = require('mysql2/promise');
 const prompt = require('prompt');
-const { exec } = require('child_process');
 
 async function main() {
     const connection = await mysql.createConnection({
@@ -20,6 +20,7 @@ async function main() {
             CREATE TABLE IF NOT EXISTS Inventarios (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 Colaborador TEXT,
+                Usuario TEXT,
                 Patrimonio VARCHAR(6),
                 Produto TEXT,
                 Marca TEXT,
@@ -88,7 +89,7 @@ async function main() {
         } else {
             console.log('Tabela "Inventarios" já existe.');
         }
-        const campos = ['Colaborador', 'Patrimonio', 'Produto', 'Marca', 'Serie', 'Modelo']; // Remova 'Entrada' e 'Saida' daqui
+        const campos = ['Colaborador', 'Usuario', 'Patrimonio', 'Produto', 'Marca', 'Serie', 'Modelo'];
         await solicitarEntrada(campos, {});
     } catch (error) {
         console.error('Erro:', error);
