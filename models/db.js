@@ -1,4 +1,3 @@
-
 const mysql = require('mysql2/promise');
 const prompt = require('prompt');
 
@@ -38,17 +37,44 @@ async function main() {
         }
 
         const campo = campos[indice];
-        let valor = await promptInput(campo);
-        while (!valor) {
-            console.error('O valor não pode estar vazio.');
-            valor = await promptInput(campo);
+
+        if (campo === 'Patrimonio') {
+            let valor = await promptInput(campo);
+
+            while (!valor || valor.length !== 6) {
+                if (!valor) {
+                    console.error('O valor não pode estar vazio.');
+                } else {
+                    console.error('O patrimônio deve ter no máximo 6 caracteres e nao pode ter menos que 6 tambem.');
+                }
+                valor = await promptInput(campo);
+            } 
+            
+            valoresCampos[campo] = valor;
+        }    else if (campo === 'Usuario') {
+                let valor = await promptInput(campo);
+
+                while (!valor || !/^\w+\.\w+$/.test(valor)) {
+                    if (!valor) {
+                        console.error('O valor não pode estar vazio.');
+                    } else {
+                        console.error('O usuário deve estar no formato nome.sobrenome.');
+                    }
+                    valor = await promptInput(campo);
+                }
+
+            valoresCampos[campo] = valor;
+        } else {
+            // Para outros campos, não há necessidade de validação especial
+            valoresCampos[campo] = await promptInput(campo);
         }
-        valoresCampos[campo] = valor;
+
         console.clear();
         console.log('Campos preenchidos:');
         for (let i = 0; i <= indice; i++) {
             console.log(`${campos[i]}: ${valoresCampos[campos[i]]}`);
         }
+
         await solicitarEntrada(campos, valoresCampos, indice + 1);
     }
 
