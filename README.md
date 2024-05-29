@@ -28,7 +28,4 @@ Criar o arquivo package
 **Você tera que instalar manualmente o drive do seu banco de dados**
 ### npm install --save mysql2 
 
-- [x] Login com autenticação básica
-- [x] Cadastro de novos patrimônios
-- [x] Consulta de patrimônios cadastrados
-- [x] Inicialização do banco de dados, verificando a existência da tabela `patrimonios` e criando-a se necessário
+
